@@ -1,17 +1,16 @@
 @file:Suppress("unused")
 
-package com.github.blad3mak3r
+package com.github.KilljoyBot
 
-import com.github.blad3mak3r.api.dto.contents.Contents
-import com.github.blad3mak3r.api.dto.ranked.Leaderboard
-import com.github.blad3mak3r.api.dto.ranked.Player
-import com.github.blad3mak3r.api.dto.status.PlatformData
-import com.github.blad3mak3r.api.dto.status.Status
-import com.github.blad3mak3r.api.enums.Locale
-import com.github.blad3mak3r.api.enums.Region
-import com.github.blad3mak3r.internal.Endpoints
-import com.github.blad3mak3r.internal.RiotTokenInterceptor
-import com.github.blad3mak3r.internal.isValidToken
+import com.github.KilljoyBot.api.dto.contents.Contents
+import com.github.KilljoyBot.api.dto.ranked.Leaderboard
+import com.github.KilljoyBot.api.dto.ranked.Player
+import com.github.KilljoyBot.api.dto.status.PlatformData
+import com.github.KilljoyBot.api.enums.Locale
+import com.github.KilljoyBot.api.enums.Region
+import com.github.KilljoyBot.internal.Endpoints
+import com.github.KilljoyBot.internal.RiotTokenInterceptor
+import com.github.KilljoyBot.internal.isValidToken
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient

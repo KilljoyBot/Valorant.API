@@ -1,7 +1,7 @@
-package com.github.blad3mak3r.internal
+package com.github.KilljoyBot.internal
 
-import com.github.blad3mak3r.api.enums.Locale
-import com.github.blad3mak3r.api.enums.Region
+import com.github.KilljoyBot.api.enums.Locale
+import com.github.KilljoyBot.api.enums.Region
 
 object Endpoints {
 

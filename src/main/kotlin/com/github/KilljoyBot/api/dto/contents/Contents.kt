@@ -1,4 +1,4 @@
-package com.github.blad3mak3r.api.dto.contents
+package com.github.KilljoyBot.api.dto.contents
 
 import org.json.JSONObject
 
