@@ -1,4 +1,4 @@
-package com.github.KilljoyBot.internal
+package com.github.killjoybot.internal
 
 internal val TOKEN_REGEX = "RGAPI-(.+?)".toRegex()
 

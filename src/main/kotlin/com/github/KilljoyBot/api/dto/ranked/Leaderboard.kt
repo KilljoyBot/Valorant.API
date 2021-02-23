@@ -1,4 +1,4 @@
-package com.github.KilljoyBot.api.dto.ranked
+package com.github.killjoybot.api.dto.ranked
 
 data class Leaderboard(
     val shard: String,

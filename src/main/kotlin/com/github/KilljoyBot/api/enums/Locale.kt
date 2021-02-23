@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.github.KilljoyBot.api.enums
+package com.github.killjoybot.api.enums
 
 enum class Locale(val code: String) {
     AR_AE("ar-AE"),

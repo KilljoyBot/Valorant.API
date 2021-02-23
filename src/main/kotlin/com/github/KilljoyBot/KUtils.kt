@@ -1,4 +1,4 @@
-package com.github.KilljoyBot
+package com.github.killjoybot
 
 import okhttp3.Call
 import okhttp3.OkHttpClient

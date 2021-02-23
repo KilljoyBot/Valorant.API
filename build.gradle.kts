@@ -6,7 +6,7 @@ plugins {
     maven
 }
 
-group = "com.github.KilljoyBot"
+group = "com.github.killjoybot"
 version = "0.1"
 
 repositories {

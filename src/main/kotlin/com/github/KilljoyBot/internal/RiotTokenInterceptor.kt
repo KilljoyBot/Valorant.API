@@ -1,4 +1,4 @@
-package com.github.KilljoyBot.internal
+package com.github.killjoybot.internal
 
 import okhttp3.Interceptor
 import okhttp3.Response

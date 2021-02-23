@@ -1,4 +1,4 @@
-package com.github.KilljoyBot.api.enums
+package com.github.killjoybot.api.enums
 
 enum class Region {
     AP,

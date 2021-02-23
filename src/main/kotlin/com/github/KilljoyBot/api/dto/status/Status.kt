@@ -1,4 +1,4 @@
-package com.github.KilljoyBot.api.dto.status
+package com.github.killjoybot.api.dto.status
 
 import org.json.JSONObject
 
