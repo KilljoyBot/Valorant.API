@@ -1,4 +1,4 @@
-package com.github.blad3mak3r.api.dto
+package com.github.blad3mak3r.api.dto.ranked
 
 import org.json.JSONObject
 

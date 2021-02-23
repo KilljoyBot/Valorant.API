@@ -2,9 +2,11 @@
 
 package com.github.blad3mak3r
 
-import com.github.blad3mak3r.api.dto.Contents
-import com.github.blad3mak3r.api.dto.Leaderboard
-import com.github.blad3mak3r.api.dto.Player
+import com.github.blad3mak3r.api.dto.contents.Contents
+import com.github.blad3mak3r.api.dto.ranked.Leaderboard
+import com.github.blad3mak3r.api.dto.ranked.Player
+import com.github.blad3mak3r.api.dto.status.PlatformData
+import com.github.blad3mak3r.api.dto.status.Status
 import com.github.blad3mak3r.api.enums.Locale
 import com.github.blad3mak3r.api.enums.Region
 import com.github.blad3mak3r.internal.Endpoints
@@ -99,6 +101,39 @@ class ValorantAPI(private val token: String) {
                 }
             }
 
+        })
+
+        return future
+    }
+
+    fun getStatus(region: Region): CompletableFuture<PlatformData> {
+        val future = CompletableFuture<PlatformData>()
+
+        val url = Endpoints.getStatusEndpoint(region)
+
+        httpClient.newCall(url).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                future.completeExceptionally(e)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                response.use { res ->
+                    if (!res.isSuccessful) {
+                        future.completeExceptionally(IOException("Received ${res.code} status code on request: $url"))
+                        return
+                    }
+
+                    if (res.body == null) {
+                        future.completeExceptionally(IllegalStateException("Received empty body on request: $url"))
+                        return
+                    }
+
+                    val json = JSONObject(res.body!!.string())
+                    val platformData = PlatformData(json)
+
+                    future.complete(platformData)
+                }
+            }
         })
 
         return future
