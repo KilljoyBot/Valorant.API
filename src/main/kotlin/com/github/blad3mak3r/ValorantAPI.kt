@@ -5,12 +5,15 @@ package com.github.blad3mak3r
 import com.github.blad3mak3r.api.Leaderboard
 import com.github.blad3mak3r.api.Player
 import com.github.blad3mak3r.api.Region
+import com.github.blad3mak3r.internal.Endpoints
 import com.github.blad3mak3r.internal.RiotTokenInterceptor
 import com.github.blad3mak3r.internal.isValidToken
-import okhttp3.*
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.OkHttpClient
+import okhttp3.Response
 import org.json.JSONObject
 import java.io.IOException
-import java.lang.IllegalArgumentException
 import java.util.concurrent.CompletableFuture
 
 class ValorantAPI(private val token: String) {
@@ -30,10 +33,8 @@ class ValorantAPI(private val token: String) {
 
         val future = CompletableFuture<Leaderboard>()
 
-        val url = getBaseEndpoint(region).plus("ranked/v1/leaderboards/by-act/${actId}?startIndex=$startIndex&size=$size")
-        val request = Request.Builder().url(url).build()
-
-        httpClient.newCall(request).enqueue(object : Callback {
+        val url = Endpoints.getLeaderboardEndpoint(region, actId, startIndex, size)
+        httpClient.newCall(url).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 future.completeExceptionally(e)
             }
