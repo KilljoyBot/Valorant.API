@@ -1,11 +1,20 @@
 package com.github.blad3mak3r.internal
 
-import com.github.blad3mak3r.api.Region
+import com.github.blad3mak3r.api.enums.Locale
+import com.github.blad3mak3r.api.enums.Region
 
 object Endpoints {
 
     internal fun getBaseEndpoint(region: Region): String {
         return "https://${region.name.toLowerCase()}.api.riotgames.com/val"
+    }
+
+    internal fun getContentsEndpoint(region: Region, locale: Locale? = null): String {
+        var base = getBaseEndpoint(region).plus("/content/v1/contents")
+
+        if (locale != null) base += "?locale=${locale.code}"
+
+        return base
     }
 
     internal fun getLeaderboardEndpoint(region: Region, actId: String, startIndex: Int, size: Int): String {

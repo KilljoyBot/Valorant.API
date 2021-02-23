@@ -1,4 +1,4 @@
-package com.github.blad3mak3r.api
+package com.github.blad3mak3r.api.dto
 
 data class Leaderboard(
     val shard: String,
