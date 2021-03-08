@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.4.30"
 
-    maven
+    `maven-publish`
 }
 
 group = "com.github.killjoybot"
